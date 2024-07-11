@@ -1,0 +1,72 @@
+{
+  "cards": [
+    {
+      "id": "1",
+      "name": "Flatiron-Modules",
+      "hours": 1,
+      "minutes": 0,
+      "seconds": 0
+    },
+    {
+      "id": "c4bf",
+      "name": "Break",
+      "hours": 2,
+      "minutes": 5,
+      "seconds": 4
+    },
+    {
+      "id": "d8b9",
+      "name": "Phase-3 Mod",
+      "hours": 1,
+      "minutes": 3,
+      "seconds": 0
+    },
+    {
+      "id": "570d",
+      "name": "Break ",
+      "hours": 0,
+      "minutes": 30,
+      "seconds": 0
+    },
+    {
+      "id": "92eb",
+      "name": "Break ",
+      "hours": 0,
+      "minutes": 30,
+      "seconds": 0
+    },
+    {
+      "id": "032f",
+      "name": "Break",
+      "hours": 0,
+      "minutes": 5,
+      "seconds": 0
+    }
+  ],
+  "longterm": [
+    {
+      "id": "1",
+      "name": "Flatiron-Graduation",
+      "days": 63,
+      "hours": 33,
+      "minutes": 46,
+      "seconds": 39
+    },
+    {
+      "id": "783c",
+      "name": "Next Friday",
+      "days": 8,
+      "hours": 0,
+      "minutes": 0,
+      "seconds": 0
+    },
+    {
+      "id": "dfe9",
+      "name": "Two Days",
+      "days": 2,
+      "hours": 0,
+      "minutes": 0,
+      "seconds": 0
+    }
+  ]
+}
