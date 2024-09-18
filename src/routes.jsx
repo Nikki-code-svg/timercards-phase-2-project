@@ -3,7 +3,12 @@ import { createBrowserRouter } from "react-router-dom";
 import LongTimer from "./LongTimer";
 import Cards from "./Cards";
 import App from "./App";
+import NavBar from './NavBar';
+import { Route, Routes, Navigate } from "react-router-dom";
 
+
+
+// const routes = Route (
 
 
 const routes = createBrowserRouter ([
