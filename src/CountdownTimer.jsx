@@ -68,7 +68,7 @@ const CountdownTimer = ({ hours, minutes, seconds }) => {
 
   return (
     <div>
-      <h3>Countdown Timer</h3>
+      <h4>Countdown Timer</h4>
       <p>
         Hours: {remainingHours} | Minutes: {remainingMinutes} | Seconds: {remainingSeconds}
       </p>

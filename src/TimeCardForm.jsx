@@ -56,6 +56,7 @@ function TimeCardForm({ addTimer }) {
       <label>
         Name:
         <input
+          className="timecard-input"
           type="text"
           value={name}
           onChange={handleNameChange}
@@ -65,6 +66,7 @@ function TimeCardForm({ addTimer }) {
       <label>
         Hours:
         <input
+          className="timecard-input"
           type="number"
           value={hours}
           onChange={handleHoursChange}
@@ -74,6 +76,7 @@ function TimeCardForm({ addTimer }) {
       <label>
         Minutes:
         <input
+          className="timecard-input"
           type="number"
           value={minutes}
           onChange={handleMinutesChange}
@@ -83,13 +86,16 @@ function TimeCardForm({ addTimer }) {
       <label>
         Seconds:
         <input
+          className="timecard-input"
           type="number"
           value={seconds}
           onChange={handleSecondsChange}
           required
         />
       </label>
-      <button type="submit">Submit</button>
+      <button 
+         className="submit-form-btnS"
+         type="submit">Submit</button>
     </form>
   );
 }

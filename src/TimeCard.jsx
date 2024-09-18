@@ -7,15 +7,16 @@ import CountdownTimer from './CountdownTimer';
 
 function TimeCard({ name, hours, minutes, seconds }) {
      return (
-     <>
-      <h3>{name}</h3>
+     <div className="timecard-container">
+      <h2 className="timecard-title">{name}</h2>
       <CountdownTimer 
           hours={hours}
           minutes={minutes}
           seconds={seconds}
          />
-       <Link to={`/cards/${name.id}`}>click me</Link>
-      </>
+       <Link className="timecard-link" 
+             to={`/cards/${name.id}`}>click me</Link>
+    </div>
     )
 }
 

@@ -5,6 +5,7 @@ function Search({ filterTimer, setFilterTimer}) {
     return (
       <div className="searchbar">
         <input
+           className="searchbar-input"
            type="text"
            id="search"
            placeholder="Type Timer..."

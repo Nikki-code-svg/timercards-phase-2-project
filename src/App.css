@@ -1,18 +1,30 @@
-.searchbar {
+
+/* general  */
+body {
+    font-family: "Playfair Display", serif;
+    font-size: 18px;
+  }
+  
+/* short term timer cards */
+ .searchbar {
     padding: 1rem;
     display: flex;
     flex-direction: column;
   }
-  body {
-    font-family: "Playfair Display", serif;
+
+  .searchbar-input {
+    padding: 1rem;
+    font-size: 1em;
+    color: gold;
+    width: 55%;
   }
-  
 
 
-
+/* long term timers card */
 .card {
     width: calc(33% - 2rem);
 }
+
 @media(min-width: 1024px) {
     .card {
         width: calc(25% - 2rem);
@@ -22,4 +34,101 @@
     .card {
         width: calc(20% - 2rem);
     }
+}
+
+/* short term form field */
+.timecard-input {
+    font-size: 18px; 
+    padding: 0.5em;
+    margin: 1em;
+  
+}
+
+
+.submit-form-btnS {
+    border-radius: 8px;
+    border: 1px solid gold;
+    padding: 0.6em 1.2em;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: inherit;
+    background-color: gold;
+    cursor: pointer;
+    transition: border-color 0.25s;
+
+}
+
+@media (min-width: 600px) {
+    
+    .timecard-input {
+        display: flex;
+        flex-direction: column; 
+        width: 45%;
+
+    }
+
+}
+
+@media (min-width:  1600px) {
+    
+    .timecard-input {
+       width: 50%;
+
+    }
+
+}
+
+
+
+
+/* the container around the timecard container */
+.cards {
+    display:flex;
+    flex-wrap:wrap;
+    
+}
+
+
+/* short term timer card */
+
+.timecard-container {
+    display:flex;
+    flex-direction: column; 
+    align-content: center;
+    text-align: center;
+    margin-bottom: 2em;
+    margin-right: 2em;
+    border: solid, grey, 3px;
+    border-radius: 5px;
+    width: 25%;
+    padding: 1em;
+    box-shadow: 0 4px 8px rgba(207, 213, 9, 0.5);
+
+}
+
+.timecard-title {
+    color: gold;
+}
+
+
+@media (min-width: 600px) {
+    body {
+        font-size: 18px;
+    }
+    .timecard-container {
+        width: 50%;
+    }
+
+}
+
+@media (min-width: 1200px) {
+    body {
+        font-size: 20px;
+    }
+    .timecard-container {
+        width: 25%;
+    }
+  }
+.timecard-link {
+
 }
