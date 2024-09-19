@@ -1,44 +1,100 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { useParams } from "react-router-dom";
 import NavBar from "./NavBar";
-import TimeList from "./TimeList";
-
 
 function Cards() {
-  const [ cards, setCards ] = useState(null);
-  const {id} = useParams();
-  console.log(cards);
+  const [card, setCard] = useState(null); 
+  const { id } = useParams();
 
-
-  useEffect(() =>{
-    fetch(`http://localhost:3000/cards/${id}`)
-    .then(response => response.json())
-    .then((card)=> {
-           setCards(card)
-    })
-    .catch(error => console.error(error));
-  }, [id])
  
+  const [isRunning, setIsRunning] = useState(false);
+  const [timeLeft, setTimeLeft] = useState(null); 
+  const intervalRef = useRef(null); 
 
-  if(!cards.title)
-        return <h1>Loading...</h1>
-    
-  const listcards = cards.timers.map((cards, index) => (
-    <span key={index}>{cards}</span>
-  ))
-    return (
-        <>
-          <header>
-            <NavBar />
-           
-          </header>
-          <main>
-          <h1>{cards.name}</h1>
-            <p>Time:{cards.timers.time}</p>
-            {listcards}
-        </main>
-        </>
-      );
-};
+  useEffect(() => {
+   fetch(`http://localhost:3000/cards/${id}`)
+      .then(response => response.json())
+      .then((data) => {
+        console.log("Fetched card data:", data); 
+        setCard(data);
+        // Convert hours, minutes, and seconds to total seconds for timer
+        const totalSeconds = data.hours * 3600 + data.minutes * 60 + data.seconds;
+        setTimeLeft(totalSeconds);
+      })
+      .catch(error => console.error("Error fetching card data:", error));
+  }, [id]);
 
- export default Cards;
+ 
+  const formatTime = (totalSeconds) => {
+    const hours = Math.floor(totalSeconds / 3600);
+    const minutes = Math.floor((totalSeconds % 3600) / 60);
+    const seconds = totalSeconds % 60;
+    return `${hours} hours, ${minutes} minutes, ${seconds} seconds`;
+  };
+
+ 
+  const startTimer = () => {
+    if (!isRunning && timeLeft > 0) {
+      setIsRunning(true);
+      intervalRef.current = setInterval(() => {
+        setTimeLeft(prevTime => {
+          if (prevTime <= 1) {
+            clearInterval(intervalRef.current); 
+            setIsRunning(false);
+            return 0;
+          }
+          return prevTime - 1;
+        });
+      }, 1000); 
+    }
+  };
+
+ 
+  const stopTimer = () => {
+    setIsRunning(false);
+    clearInterval(intervalRef.current);
+  };
+
+  
+  const resetTimer = () => {
+    if (card) {
+      const totalSeconds = card.hours * 3600 + card.minutes * 60 + card.seconds;
+      setTimeLeft(totalSeconds);
+      clearInterval(intervalRef.current);
+      setIsRunning(false);
+    }
+  };
+
+  if (!card) {
+    return <h1>No card found</h1>;
+  }
+
+  return (
+    <>
+      <header>
+        <NavBar />
+      </header>
+      <main>
+        <h1>{card.name}</h1>
+        <p>
+          Time Left: {formatTime(timeLeft)}
+        </p>
+        <div>
+          <button  className='single-btn' onClick={startTimer} disabled={isRunning || timeLeft === 0}>
+            Start
+          </button>
+          <button className='single-btn'  onClick={stopTimer} disabled={!isRunning}>
+            Stop
+          </button>
+          <button className='single-btn'  onClick={resetTimer}>
+            Reset
+          </button>
+        </div>
+      </main>
+    </>
+  );
+}
+
+export default Cards;
+
+

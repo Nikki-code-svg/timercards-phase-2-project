@@ -4,16 +4,12 @@ import "./NavBar.css";
 function NavBar() {
     return (
        <nav role="navigation" className="navbar">
-        <NavLink
-            to="/"
-            className="nav-link">
+           <NavLink to="/" className="nav-link">
                 Home
-         </NavLink>
-          <NavLink
-             to="./LongTimer"
-             className="nav-link">
+           </NavLink>
+           <NavLink to="/LongTimer" className="nav-link">
                 Future Timer
-          </NavLink>
+           </NavLink>
 
         </nav>
 
