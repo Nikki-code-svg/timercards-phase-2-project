@@ -1,45 +1,17 @@
 {
   "cards": [
     {
-      "id": "1",
-      "name": "Flatiron-Modules",
+      "id": "cb4b",
+      "name": "Work on Project",
       "hours": 1,
-      "minutes": 0,
-      "seconds": 0
-    },
-    {
-      "id": "c4bf",
-      "name": "Break",
-      "hours": 2,
-      "minutes": 5,
-      "seconds": 4
-    },
-    {
-      "id": "d8b9",
-      "name": "Phase-3 Mod",
-      "hours": 1,
-      "minutes": 3,
-      "seconds": 0
-    },
-    {
-      "id": "570d",
-      "name": "Break ",
-      "hours": 0,
       "minutes": 30,
       "seconds": 0
     },
     {
-      "id": "92eb",
-      "name": "Break ",
-      "hours": 0,
-      "minutes": 30,
-      "seconds": 0
-    },
-    {
-      "id": "032f",
+      "id": "9f36",
       "name": "Break",
       "hours": 0,
-      "minutes": 5,
+      "minutes": 30,
       "seconds": 0
     }
   ],

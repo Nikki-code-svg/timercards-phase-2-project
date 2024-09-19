@@ -95,7 +95,7 @@ fetch("http://localhost:3000/longterm", {
         onChange={handleSecondsChange} />
      </label>
        {` `}
-     <button type="submit">Submit</button>
+     <button className="longbtn-delete" type="submit">Submit</button>
        
      </form>
    );

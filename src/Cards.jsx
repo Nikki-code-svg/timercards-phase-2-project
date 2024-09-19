@@ -6,8 +6,9 @@ import TimeList from "./TimeList";
 
 function Cards() {
   const [ cards, setCards ] = useState(null);
-   const {id} = useParams();
-  console.log(params);
+  const {id} = useParams();
+  console.log(cards);
+
 
   useEffect(() =>{
     fetch(`http://localhost:3000/cards/${id}`)
@@ -29,7 +30,7 @@ function Cards() {
         <>
           <header>
             <NavBar />
-            
+           
           </header>
           <main>
           <h1>{cards.name}</h1>

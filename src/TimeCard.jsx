@@ -1,23 +1,26 @@
-
 import React from "react";
 import { Link } from 'react-router-dom';
 import CountdownTimer from './CountdownTimer';
 
-
-
-function TimeCard({ name, hours, minutes, seconds }) {
-     return (
-     <div className="timecard-container">
-      <h2 className="timecard-title">{name}</h2>
-      <CountdownTimer 
+function TimeCard({ name, hours, minutes, seconds, id, handleDelete }) {
+  return (
+    <main>
+      <div className="timecard-container">
+      <Link className="timecard-link" to={`/cards/${id}`}>
+          click me
+        </Link>
+        <h2 className="timecard-title">{name}</h2>
+        <CountdownTimer 
           hours={hours}
           minutes={minutes}
           seconds={seconds}
-         />
-       <Link className="timecard-link" 
-             to={`/cards/${name.id}`}>click me</Link>
-    </div>
-    )
+        />
+        
+        <button className="cardbtn-delete" onClick={() => handleDelete(id)}> x </button> 
+      </div>
+    </main> 
+  );
 }
 
 export default TimeCard;
+

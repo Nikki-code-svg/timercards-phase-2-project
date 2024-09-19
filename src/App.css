@@ -1,8 +1,10 @@
 
 /* general  */
 body {
-    font-family: "Playfair Display", serif;
+    font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 18px;
+    background-color: #EDE8DC;
+
   }
   
 /* short term timer cards */
@@ -15,9 +17,14 @@ body {
   .searchbar-input {
     padding: 1rem;
     font-size: 1em;
-    color: gold;
+    color: #F1C376;
     width: 55%;
+    border-radius: 5px;
   }
+
+  /* .searchbar-input:active{
+     border-color: #A5B68D;
+  } */
 
 
 /* long term timers card */
@@ -36,6 +43,19 @@ body {
     }
 }
 
+.longbtn-delete {
+    border-radius: 8px;
+    border: 1px solid transparent;
+    padding: 0.6em 1.2em;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: inherit;
+    background-color: #1a1a1a;
+    cursor: pointer;
+    transition: border-color 0.25s;
+}
+
+
 /* short term form field */
 .timecard-input {
     font-size: 18px; 
@@ -47,15 +67,19 @@ body {
 
 .submit-form-btnS {
     border-radius: 8px;
-    border: 1px solid gold;
+    border: 1px solid #606C5D;
     padding: 0.6em 1.2em;
     font-size: 1em;
     font-weight: 500;
     font-family: inherit;
-    background-color: gold;
+    background-color: #606C5D;
     cursor: pointer;
     transition: border-color 0.25s;
 
+}
+
+.submit-form-btnS:hover {
+    background-color: #A5B68D;
 }
 
 @media (min-width: 600px) {
@@ -78,15 +102,12 @@ body {
 
 }
 
-
-
-
 /* the container around the timecard container */
-.cards {
+/* .cards {
     display:flex;
     flex-wrap:wrap;
     
-}
+} */
 
 
 /* short term timer card */
@@ -103,11 +124,13 @@ body {
     width: 25%;
     padding: 1em;
     box-shadow: 0 4px 8px rgba(207, 213, 9, 0.5);
+    background-color: #E7CCCC;
 
 }
 
 .timecard-title {
-    color: gold;
+    color: #606C5D;
+   
 }
 
 
@@ -129,6 +152,56 @@ body {
         width: 25%;
     }
   }
-.timecard-link {
+/* .timecard-link {
 
+} */
+
+.cardbtn-delete {
+    border-radius: 8px;
+    border: 1px solid transparent;
+    padding: 1em;
+    background-color: #FFF4F4;
 }
+
+.cardbtn-delete:hover{
+    background-color: #E7CCCC;
+    cursor: pointer;
+}
+
+.sSR-btn {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  margin-right: 10px;
+  margin-bottom: 2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #F1C376;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+.sSR-btn:hover{
+    border-color: #606C5D;
+}
+
+/* Define the keyframes with a unique name 'glow' */
+@keyframes glow {
+    from {
+      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+    }
+    to {
+      text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+    }
+  }
+  
+  /* Apply the animation to an element */
+  .count-timer {
+    margin-bottom: 3em;
+    color: #fff; /* Text color that works well with the glow */
+    text-align: center;
+    animation: glow 1s ease-in-out infinite alternate; /* Reference the keyframes */
+    
+  }
+  

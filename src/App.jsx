@@ -1,51 +1,55 @@
-import { useEffect, useState } from 'react'
-import './App.css'
+import { useEffect, useState } from 'react';
+import './App.css';
 import NavBar from './NavBar';
 import TimeList from './TimeList';
-import Search from "./Search";
+import Search from './Search';
 import TimeCardForm from './TimeCardForm';
 
-
 function App() {
- const [ timers, setTimers ] = useState([]);
- const [ filterTimer, setFilterTimer ] = useState("")
-console.log(filterTimer);
+  const [timers, setTimers] = useState([]);
+  const [filterTimer, setFilterTimer] = useState(""); // For filtering timers
 
+  useEffect(() => {
+    fetch("http://localhost:3000/cards")
+      .then(response => response.json())
+      .then(data => setTimers(data)) 
+      .catch(error => console.error('Error fetching timers:', error));
+  }, []);
 
-useEffect(() => {
-   fetch("http://localhost:3000/cards")
-    .then(response => response.json())
-    .then((timer) => {
-        setTimers(timer);
+ 
+  function addTimer(newTimer) {
+    setTimers([...timers, newTimer]);
+  }
+
+ 
+  const handleDelete = (id) => {
+    fetch(`http://localhost:3000/cards/${id}`, {
+      method: 'DELETE',
     })
-    .catch(error => {
-        console.error(error);
-    });
-}, []);
+    .then(response => {
+      if (response.ok) {
+        // Remove the card from state without a refresh
+        setTimers(prevTimers => prevTimers.filter(timer => timer.id !== id));
+      } else {
+        console.error('Failed to delete the timer');
+      }
+    })
+    .catch(error => console.error('Error deleting timer:', error));
+  };
 
+ 
+  const filteredTimers = timers.filter(timer => 
+    timer.name.toLowerCase().includes(filterTimer.toLowerCase())
+  );
 
-function addTimer(newTimer) {
-  setTimers([...timers, newTimer])
+  return (
+    <div className="home">
+      <NavBar />
+      <TimeCardForm addTimer={addTimer} />
+      <Search filterTimer={filterTimer} setFilterTimer={setFilterTimer} />
+      <TimeList timeF={filteredTimers} handleDelete={handleDelete} /> 
+    </div>
+  );
 }
 
-const HandleTimerFilter = timers.filter((timers) => {
-  return timers.name.toLowerCase().includes(filterTimer.toLowerCase());
-});
-
-
-
-
-return (
-    
-      <div className="home">
-        <NavBar />
-        <TimeCardForm addTimer={addTimer}/>
-        <Search filterTimer={filterTimer} setFilterTimer={setFilterTimer} />
-        <TimeList timeF={HandleTimerFilter} />
-       
-       
-       
-       </div>
-       );
-    }
 export default App;

@@ -5,7 +5,7 @@ import Cards from "./Cards";
 import App from "./App";
 import NavBar from './NavBar';
 import { Route, Routes, Navigate } from "react-router-dom";
-
+import TimeList from "./TimeList";
 
 
 // const routes = Route (
@@ -24,7 +24,7 @@ const routes = createBrowserRouter ([
          element: <LongTimer />
       },
       {
-         path: "/cards/:id",
+         path: "/Cards/:id",
          element:<Cards />
 
       }

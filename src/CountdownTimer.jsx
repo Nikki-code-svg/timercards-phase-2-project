@@ -69,12 +69,12 @@ const CountdownTimer = ({ hours, minutes, seconds }) => {
   return (
     <div>
       <h4>Countdown Timer</h4>
-      <p>
+      <p className='count-timer'>
         Hours: {remainingHours} | Minutes: {remainingMinutes} | Seconds: {remainingSeconds}
       </p>
-      <button onClick={handleStart}>Start</button>
-      <button onClick={handleStop}>Stop</button>
-      <button onClick={handleReset}>Reset</button>
+      <button  className="sSR-btn" onClick={handleStart}>Start</button>
+      <button  className="sSR-btn" onClick={handleStop}>Stop</button>
+      <button  className="sSR-btn" onClick={handleReset}>Reset</button>
     </div>
   );
 };
