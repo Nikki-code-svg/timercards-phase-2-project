@@ -19,8 +19,9 @@
     transition: border-color 0.25s;
 
 }
+
 .longbtn-delete:hover{
-   background-color: #606C5D;
+   background-color: #EDE8DC;
 }
 
 .input-search {

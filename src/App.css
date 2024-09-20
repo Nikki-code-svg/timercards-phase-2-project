@@ -76,6 +76,15 @@ body {
 
 }
 
+.timecard-link { 
+    color: #ff4da6;
+
+}
+
+/* .timecard-link:visited { 
+    color: #606C5D;
+} */
+
 /* @media (min-width: 600px) {
     .single-btn, .single-card-font {
         display:flex;
@@ -152,7 +161,7 @@ body {
     border: solid, grey, 3px;
     border-radius: 5px;
     padding: 1em;
-    box-shadow: 0 4px 8px rgba(207, 213, 9, 0.5);
+    box-shadow: 8px 8px 8px rgba(2, 141, 5, 0.5);
     background-color: #E7CCCC;
 
 }
