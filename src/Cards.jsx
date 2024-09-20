@@ -75,12 +75,12 @@ function Cards() {
         <NavBar />
       </header>
       <main>
-        <h1>{card.name}</h1>
-        <p>
+        <h1 className="single-card-name">{card.name}</h1>
+        <p className="single-card-font">
           Time Left: {formatTime(timeLeft)}
         </p>
         <div>
-          <button  className='single-btn' onClick={startTimer} disabled={isRunning || timeLeft === 0}>
+          <button className='single-btn' onClick={startTimer} disabled={isRunning || timeLeft === 0}>
             Start
           </button>
           <button className='single-btn'  onClick={stopTimer} disabled={!isRunning}>

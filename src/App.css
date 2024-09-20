@@ -68,8 +68,16 @@ body {
     font-family: inherit;
     background-color: #E7CCCC;
     cursor: pointer;
+    align-content: center;
 }
+.single-card-font {
+    font-size: 3.5em;
 
+}
+.single-card-name {
+    text-align: center;
+
+}
 
 /* short term form field */
 .timecard-input {
