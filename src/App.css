@@ -7,38 +7,6 @@ body {
 
   }
   
-/* short term timer cards */
- .searchbar {
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .searchbar-input {
-    padding: 1rem;
-    font-size: 1em;
-    color: hotpink;
-    width: 55%;
-    border-radius: 5px;
-  }
-
-/* long term timers card */
-.card {
-    width: calc(33% - 2rem);
-}
-
-@media(min-width: 1024px) {
-    .card {
-        width: calc(25% - 2rem);
-    }
-}
-@media (min-width: 1200px) {
-    .card {
-        width: calc(20% - 2rem);
-    }
-}
-
-
 
 /* Single short term card */
 .container-singlebtn {
@@ -59,6 +27,15 @@ body {
     cursor: pointer;
 }
 
+@keyframes glow {
+    from {
+      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+    }
+    to {
+      text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+    }
+  }
+
 .single-card-font {
     display: flex;
     font-size: 4em;
@@ -70,9 +47,7 @@ body {
     text-align: center;
 }
 
-.timecard-link { 
-    color: #ff4da6;
-}
+
 
 /* .timecard-link:visited { 
     color: #606C5D;
@@ -156,6 +131,22 @@ body {
 
 }
 
+
+/* short term timer cards */
+.searchbar {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .searchbar-input {
+    padding: 1rem;
+    font-size: 1em;
+    color: hotpink;
+    width: 55%;
+    border-radius: 5px;
+  }
+
 /* the container around the timecard container */
 .cards {
     display:flex;
@@ -165,7 +156,6 @@ body {
 
 
 /* short term timer card */
-
 .timecard-container {
     display:flex;
     flex-direction: column; 
@@ -174,11 +164,27 @@ body {
     margin-bottom: 2em;
     margin-right: 2em;
     border: solid, grey, 3px;
-    border-radius: 5px;
+    border-radius: 10px;
     padding: 1em;
     box-shadow: 8px 8px 8px rgba(2, 141, 5, 0.5);
     background-color: #E7CCCC;
 
+}
+
+/* Timer count down style on card*/
+.count-timer {
+    margin-bottom: 3em;
+    color: #fff; 
+    text-align: center;
+    opacity: 0.3;
+    padding: 1em;
+    font-size: 1.2em;
+    background: radial-gradient( #ff4da6, #E7CCCC);
+    
+  }
+
+.timecard-link { 
+    color: #ff4da6;
 }
 
 .timecard-title {
@@ -191,9 +197,7 @@ body {
     body {
         font-size: 18px;
     }
-    .timecard-container {
-        /* width: 50%; */
-    }
+  
 
 }
 
@@ -201,12 +205,33 @@ body {
     body {
         font-size: 20px;
     }
-    .timecard-container {
-        /* width: 25%; */
-    }
+  
   }
 
+  /* Start, Stop, & Reset */
+  .sSR-btn {
+    border-radius: 8px;
+    border: 1px solid transparent;
+    padding: 0.6em 1.2em;
+    margin-right: 10px;
+    margin-bottom: 2em;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: inherit;
+    background-color: #C1CFA1;
+    cursor: pointer;
+    transition: border-color 0.25s;
+  }
+  
+  .sSR-btn:hover{
+      background-color: #606C5D;
+  }
 
+/* .countdown-timer {
+    color: #ff4da6;
+} */
+
+/* Delete button on card */
 .cardbtn-delete {
     border-radius: 8px;
     border: 1px solid transparent;
@@ -219,43 +244,12 @@ body {
     cursor: pointer;
 }
 
-.sSR-btn {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  margin-right: 10px;
-  margin-bottom: 2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #C1CFA1;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-
-.sSR-btn:hover{
-    background-color: #606C5D;
-}
 
 
-@keyframes glow {
-    from {
-      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
-    }
-    to {
-      text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
-    }
-  }
+
+
   
-/* Timer count down style */
-  .count-timer {
-    margin-bottom: 3em;
-    color: #fff; 
-    text-align: center;
-    opacity: 0.3;
-    padding: 1em;
-    font-size: 1.2em;
-    background: radial-gradient(#ff4da6, #E7CCCC);
-    
-  }
+
+
+  /* #940B92, */
   

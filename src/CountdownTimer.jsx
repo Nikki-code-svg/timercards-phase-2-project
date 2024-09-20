@@ -84,7 +84,7 @@ const CountdownTimer = ({ hours, minutes, seconds }) => {
 
   return (
     <div>
-      <h4>Countdown Timer</h4>
+      {/* <h4 className="countdown-timer">Countdown Timer</h4> */}
       <p className='count-timer'>
         Hours: {remainingHours} | Minutes: {remainingMinutes} | Seconds: {remainingSeconds}
       </p>
