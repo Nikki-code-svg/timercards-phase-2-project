@@ -1,4 +1,23 @@
 
+.input-form {
+    margin: 1em;
+    color: #F1C376;
+    padding: 0.5em;
+    border-radius: 5px;
+    align-content: center;
+    font-size: 1em;
+
+}
+
+.input-search {
+    padding: 0.5em;
+    width: 50%;
+    font-size: 1em;
+    border-radius: 5px;
+    border: 2px solid #606C5D;
+    color: #F1C376;
+}
+
 
 .long-title {
     font-size: 30px;
@@ -24,14 +43,7 @@
    background-color: #EDE8DC;
 }
 
-.input-search {
-    padding: 0.5em;
-    width: 50%;
-    font-size: 1em;
-    border-radius: 5px;
-    border: 2px solid #606C5D;
-    color: #F1C376;
-}
+
 
 .editedbtn {
     border-radius: 8px;
@@ -82,15 +94,7 @@
     background-color: #EDE8DC;
 }
 
-.input-form {
-    margin: 1em;
-    color: #F1C376;
-    padding: 0.5em;
-    border-radius: 5px;
-    align-content: center;
-    font-size: 1em;
 
-}
 
 .cancelbtn, .savebtn {
     margin: 1em;
