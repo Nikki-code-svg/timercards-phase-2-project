@@ -41,6 +41,16 @@
       "id": "c759",
       "name": "End of School Year",
       "targetDate": "2025-06-26T17:00"
+    },
+    {
+      "id": "b1f1",
+      "name": "Rosh Hashanah",
+      "targetDate": "2024-10-03T09:00"
+    },
+    {
+      "id": "6b26",
+      "name": "ThanksGiving",
+      "targetDate": "2024-11-28T09:00"
     }
   ]
 }

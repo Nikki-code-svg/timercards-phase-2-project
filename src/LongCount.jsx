@@ -26,8 +26,8 @@ const LongCount = ({ targetDate }) => {
   }, [targetDate]);
 
   return (
-    <div>
-      <p>
+    <div className="date-time-container">
+      <p className="font-DHMS">
         Days: {timeLeft.days} | Hours: {timeLeft.hours} | Minutes: {timeLeft.minutes} | Seconds: {timeLeft.seconds}
       </p>
     </div>

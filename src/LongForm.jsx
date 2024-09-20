@@ -45,7 +45,7 @@ function LongForm({ addTimer }) {
         Target Date:
         <input className="input-form" type="datetime-local" value={targetDate} onChange={handleDateChange} /> 
       </label>
-      <button className="longbtn-delete" type="submit">Submit</button>
+      <button className="longbtn-submit" type="submit">Submit</button>
     </form>
   );
 }

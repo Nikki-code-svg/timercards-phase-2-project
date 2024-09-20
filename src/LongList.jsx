@@ -3,7 +3,7 @@ import LongCard from "./LongCard";
 
 function LongList({ time, handleDelete, handleUpdate}) {
   return (
-    <ul className="cards">
+    <ul className="longcards">
       {time.map(longterm => (
         <LongCard 
           key={longterm.id}

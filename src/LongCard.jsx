@@ -13,7 +13,7 @@ function LongCard({ name, targetDate, id, handleDelete, handleUpdate }) {
   };
 
   return (
-    <main>
+    <main className="main-container-cards">
       {isEditing ? (
         <div>
           <input 
@@ -23,6 +23,7 @@ function LongCard({ name, targetDate, id, handleDelete, handleUpdate }) {
             onChange={(e) => setNewName(e.target.value)} 
           />
           <input 
+            className="edit-input"
             type="datetime-local" 
             value={newTargetDate} 
             onChange={(e) => setNewTargetDate(e.target.value)} 
@@ -32,7 +33,7 @@ function LongCard({ name, targetDate, id, handleDelete, handleUpdate }) {
         </div>
       ) : (
         <div>
-          <h3>{name}</h3>
+          <h3 className="long-title">{name}</h3>
           <LongCount targetDate={targetDate} />
           <button className="editedbtn" onClick={() => setIsEditing(true)}>Edit</button>
           <button className="longbtn-delete" onClick={() => handleDelete(id)}>x</button>

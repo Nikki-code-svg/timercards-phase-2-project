@@ -1,34 +1,153 @@
-.longTimer {
-    display:flex;
-    text-align: center;
+
+
+.long-title {
+    font-size: 30px;
+    color: #ff4da6;
 }
 
-.longbtn-delete {
 
+.longbtn-delete {
+    margin-left: 1em;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    padding: 0.6em 1.2em;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: inherit;
+    background-color: #E7CCCC;;
+    cursor: pointer;
+    transition: border-color 0.25s;
+
+}
+.longbtn-delete:hover{
+   background-color: #606C5D;
+}
+
+.input-search {
+    padding: 0.5em;
+    width: 50%;
+    font-size: 1em;
+    border-radius: 5px;
+    border: 2px solid #606C5D;
+    color: #F1C376;
 }
 
 .editedbtn {
+    border-radius: 8px;
+    border: 1px solid #606C5D;
+    padding: 0.6em 1.2em;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: inherit;
+    background-color: #E7CCCC;
+    cursor: pointer;
+    transition: border-color 0.25s;
 
+}
+
+.editedbtn:hover {
+    background-color: #ff4da6;
 }
 
 
 /* Long form  */
 .longSubbtn {
+    border-radius: 8px;
+    border: 1px solid #606C5D;
+    padding: 0.6em 1.2em;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: inherit;
+    background-color: #E7CCCC;
+    cursor: pointer;
+    transition: border-color 0.25s;
 
+}
+
+.longbtn-submit {
+    border-radius: 8px;
+    border: 1px solid #606C5D;
+    padding: 0.6em 1.2em;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: inherit;
+    background-color: #E7CCCC;
+    cursor: pointer;
+    transition: border-color 0.25s;
+
+}
+
+.longbtn-submit:hover {
+    background-color: #EDE8DC;
 }
 
 .input-form {
+    margin: 1em;
+    color: #F1C376;
+    padding: 0.5em;
+    border-radius: 5px;
+    align-content: center;
+    font-size: 1em;
 
 }
 
-.cancelbtn {
-
+.cancelbtn, .savebtn {
+    margin: 1em;
+    border-radius: 8px;
+    border: 1px solid #606C5D;
+    padding: 0.6em 1.2em;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: inherit;
+    background-color: #E7CCCC;
+    cursor: pointer;
+    transition: border-color 0.25s;
 }
 
-.savebtn {
+.savebtn:hover {
+   background-color: #ff4da6 ;
+}
 
+.cancelbtn:hover {
+    background-color: #ff4da6;
 }
 
 .edit-input {
-    
+    margin: 1em;
+    color: #F1C376;
+    padding: 0.5em;
+    border-radius: 5px;
+    align-content: center;
+    font-size: 1em;
+}
+
+
+.main-container-cards {
+    display:flex;
+    flex-direction: column; 
+    align-content: center;
+    text-align: center;
+    margin: 1em;
+    padding: 1em;
+    background-color: #C1CFA1;
+    border: solid, grey, 3px;
+    border-radius: 5px;
+    box-shadow: 8px 8px 8px rgba(213, 9, 162, 0.5);
+}
+
+.date-time-container {
+    margin-bottom: 2em;
+    padding: 2em;
+    background: radial-gradient(#606C5D, #606C5D, #A5B68D, #C1CFA1, #C1CFA1);
+
+}
+
+.font-DHMS {
+    font-size: 1.5em;
+    color: #fff;
+}
+
+.longcards {
+    display:flex;
+    flex-wrap:wrap;
 }
