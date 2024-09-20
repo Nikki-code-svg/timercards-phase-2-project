@@ -29,11 +29,53 @@ function addTimer(newTimer) {
   setLongTimers([...longTimers, newTimer])
 }
 
+const handleDelete = (id) => {
+  fetch(`http://localhost:3000/longterm/${id}`, {
+    method: 'DELETE',
+  })
+  .then(response => {
+    if (response.ok) {
+      setLongTimers(prevTimers => prevTimers.filter(timer => timer.id !== id));
+    } else {
+      console.error('Failed to delete the timer');
+    }
+  })
+  .catch(error => console.error('Error deleting timer:', error));
+};
+
+
+const handleUpdate = (id, updatedData) => {
+  fetch(`http://localhost:3000/longterm/${id}`, {
+    method: 'PATCH',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(updatedData),
+  })
+  .then(res => {
+    if (res.ok) {
+      return res.json();
+    } else {
+      throw new Error('Failed to update the timer');
+    }
+  })
+  .then(updatedTimer => {
+    console.log('Updated Timer:', updatedTimer); 
+    setLongTimers(prevTimers => 
+      prevTimers.map(timer => 
+        timer.id === id ? updatedTimer : timer
+      )
+    );
+    console.log('Timer updated successfully');
+  })
+  
+  .catch(error => console.error('Error patching timer:', error));
+};
+
+
 const handleTimerFilter = longTimers.filter(timer =>
     timer.name.toLowerCase().includes(longfilter.toLowerCase())
   );
-
-
 
 
 return (
@@ -42,7 +84,7 @@ return (
         <NavBar />
         <LongForm addTimer={addTimer}/>
         <LongSearch filterTimer={longfilter} setFilterTimer={setLongFilter} />
-        <LongList time={handleTimerFilter} />
+        <LongList time={handleTimerFilter} handleDelete={handleDelete} handleUpdate={handleUpdate}/>
        
        
        </div>

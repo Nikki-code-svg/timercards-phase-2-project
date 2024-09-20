@@ -1,104 +1,53 @@
 import React, { useState } from "react";
+import "./Long.css"
 
-function LongForm({addTimer}) {
-    const [ days, setDays ] = useState(0);
-    const [ hours, setHours ] = useState(0);
-    const [ minutes, setMinutes ] = useState(0);
-    const [ seconds, setSeconds ] = useState(0);
-    
-    const [ name, setName ] = useState("");
+function LongForm({ addTimer }) {
+  const [name, setName] = useState("");
+  const [targetDate, setTargetDate] = useState(""); 
 
-    const handleDaysChange = (e) => {
-        setDays(parseInt(e.target.value));
-    }
+  const handleNameChange = (e) => setName(e.target.value);
 
-    const handleHoursChange = (e) => {
-        setHours(parseInt(e.target.value));
-    }
+  const handleDateChange = (e) => setTargetDate(e.target.value); 
 
-    const handleMinutesChange = (e) => {
-        setMinutes(parseInt(e.target.value));
-    }
-    const handleSecondsChange = (e) => {
-        setSeconds(parseInt(e.target.value));
-    }
-    const handleNameChange = (e) => {
-        setName(e.target.value)
-
-    }
-
-   function handleSubmit(e) {
+  function handleSubmit(e) {
     e.preventDefault();
-   
 
-const timerData = {
-    name,
-    days,
-    hours,
-    minutes,
-    seconds
-};
+    const timerData = {
+      name,
+      targetDate,  
+    };
 
-fetch("http://localhost:3000/longterm", {
-    method: "POST",
-    headers: {
+    fetch("http://localhost:3000/longterm", {
+      method: "POST",
+      headers: {
         "Content-Type": "application/json",
-    },
-    body: JSON.stringify(timerData),
-})
-  .then((response) => response.json())
-  .then((data) => {
-    addTimer(data);
-    setHours(0);
-    setMinutes(0);
-    setSeconds(0);
-  })
-  .catch((error) => {
-    console.error(error);
-  });
- }
- return (
+      },
+      body: JSON.stringify(timerData),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        addTimer(data);
+        setName("");
+        setTargetDate("");
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }
 
-    <form onSubmit={handleSubmit}>
-     <label>
-          Name:
-         <input type="name"
-          value={name}
-          onChange={handleNameChange} />
-     </label>
-     <label>
-        Days:
-        <input type="number" 
-        value={days}
-         onChange={handleDaysChange} />
-     </label>
-     <label>
-        Hours:
-        <input type="number" 
-        value={hours}
-         onChange={handleHoursChange} />
-     </label>
-     {` `}
-     <label>
-        Minutes:
-        <input type="number" 
-        value={minutes} 
-        onChange={handleMinutesChange} />
-     </label>
-     {` `}
-     <label>
-        Seconds:
-        <input type="number" 
-        value={seconds} 
-        onChange={handleSecondsChange} />
-     </label>
-       {` `}
-     <button className="longbtn-delete" type="submit">Submit</button>
-       
-     </form>
-   );
-
-    
-};
+  return (
+    <form  className="longSubbtn" onSubmit={handleSubmit}>
+      <label>
+        Name:
+        <input className="input-form" type="text" value={name} onChange={handleNameChange} />
+      </label>
+      <label>
+        Target Date:
+        <input className="input-form" type="datetime-local" value={targetDate} onChange={handleDateChange} /> 
+      </label>
+      <button className="longbtn-delete" type="submit">Submit</button>
+    </form>
+  );
+}
 
 export default LongForm;

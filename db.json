@@ -38,28 +38,9 @@
   ],
   "longterm": [
     {
-      "id": "1",
-      "name": "Flatiron-Graduation",
-      "days": 63,
-      "hours": 33,
-      "minutes": 46,
-      "seconds": 39
-    },
-    {
-      "id": "783c",
-      "name": "Next Friday",
-      "days": 8,
-      "hours": 0,
-      "minutes": 0,
-      "seconds": 0
-    },
-    {
-      "id": "dfe9",
-      "name": "Two Days",
-      "days": 2,
-      "hours": 0,
-      "minutes": 0,
-      "seconds": 0
+      "id": "c759",
+      "name": "End of School Year",
+      "targetDate": "2025-06-26T17:00"
     }
   ]
 }

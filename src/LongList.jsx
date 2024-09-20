@@ -1,30 +1,25 @@
 import React from "react";
 import LongCard from "./LongCard";
 
-
-function LongList({ time }) {
-    return (
-    
-      <ul className="cards">
-       {time.map(longterm => (
-       
-           <LongCard 
-              key={longterm.id}
-              name={longterm.name}
-              days={longterm.days}
-              hours={longterm.hours}
-              minutes={longterm.minutes}
-              seconds={longterm.seconds}
-              />
-          ))}
-
-      </ul>
-    
+function LongList({ time, handleDelete, handleUpdate}) {
+  return (
+    <ul className="cards">
+      {time.map(longterm => (
+        <LongCard 
+          key={longterm.id}
+          id={longterm.id}
+          name={longterm.name}
+          targetDate={longterm.targetDate}
+          handleDelete={handleDelete}
+          handleUpdate={handleUpdate}
+        />
+      ))}
+    </ul>
   );
-  
 }
 
 export default LongList;
+
 
           
 
