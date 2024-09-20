@@ -5,6 +5,7 @@ function TimeCardForm({ addTimer }) {
   const [minutes, setMinutes] = useState(0);
   const [seconds, setSeconds] = useState(0);
   const [name, setName] = useState("");
+ 
 
   const handleHoursChange = (e) => {
     setHours(parseInt(e.target.value));
@@ -25,6 +26,14 @@ function TimeCardForm({ addTimer }) {
   function handleSubmit(e) {
     e.preventDefault();
 
+    function resetForm() {
+      setName("");
+      setHours(0);
+      setMinutes(0);
+      setSeconds(0);
+
+    }
+
     const timerData = {
       name,
       hours,
@@ -42,9 +51,7 @@ function TimeCardForm({ addTimer }) {
       .then((response) => response.json())
       .then((data) => {
         addTimer(data); 
-        setHours(0);
-        setMinutes(0);
-        setSeconds(0);
+        resetForm();
       })
       .catch((error) => {
         console.error("Error submitting data:", error);

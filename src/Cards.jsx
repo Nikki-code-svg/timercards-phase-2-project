@@ -77,9 +77,9 @@ function Cards() {
       <main>
         <h1 className="single-card-name">{card.name}</h1>
         <p className="single-card-font">
-          Time Left: {formatTime(timeLeft)}
+          {formatTime(timeLeft)}
         </p>
-        <div>
+        <div className="container-singlebtn">
           <button className='single-btn' onClick={startTimer} disabled={isRunning || timeLeft === 0}>
             Start
           </button>

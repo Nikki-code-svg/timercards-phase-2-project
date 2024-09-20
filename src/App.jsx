@@ -7,7 +7,7 @@ import TimeCardForm from './TimeCardForm';
 
 function App() {
   const [timers, setTimers] = useState([]);
-  const [filterTimer, setFilterTimer] = useState(""); // For filtering timers
+  const [filterTimer, setFilterTimer] = useState("");
 
   useEffect(() => {
     fetch("http://localhost:3000/cards")
@@ -28,7 +28,6 @@ function App() {
     })
     .then(response => {
       if (response.ok) {
-        // Remove the card from state without a refresh
         setTimers(prevTimers => prevTimers.filter(timer => timer.id !== id));
       } else {
         console.error('Failed to delete the timer');
