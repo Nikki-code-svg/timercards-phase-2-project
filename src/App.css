@@ -17,15 +17,10 @@ body {
   .searchbar-input {
     padding: 1rem;
     font-size: 1em;
-    color: #F1C376;
+    color: hotpink;
     width: 55%;
     border-radius: 5px;
   }
-
-  /* .searchbar-input:active{
-     border-color: #A5B68D;
-  } */
-
 
 /* long term timers card */
 .card {
@@ -73,35 +68,55 @@ body {
 
 .single-card-name {
     text-align: center;
-
 }
 
 .timecard-link { 
     color: #ff4da6;
-
 }
 
 /* .timecard-link:visited { 
     color: #606C5D;
 } */
 
-/* @media (min-width: 600px) {
-    .single-btn, .single-card-font {
-        display:flex;
-        flex-direction: column; 
-        
-    }
-} */
-
-
 /* short term form field */
 .timecard-input {
     font-size: 18px; 
+    color: hotpink;
     padding: 0.5em;
     margin: 1em;
     border-radius: 8px;
-  
 }
+
+.timecard-time {
+    font-size: 18px; 
+    color: hotpink;
+    padding: 10px;
+    margin: 1em;
+    border-radius: 8px;
+}
+
+
+/* @media (min-width: 600px) {
+    
+    .timecard-time {
+        display: flex;
+        flex-direction: column; 
+        width: 20%;
+
+    }
+
+}
+
+@media (min-width:  1600px) {
+    
+    .timecard-time {
+        display: flex;
+        padding: 15px;
+        flex-direction: row; 
+
+    }
+
+} */
 
 
 .submit-form-btnS {
@@ -190,9 +205,7 @@ body {
         /* width: 25%; */
     }
   }
-/* .timecard-link {
 
-} */
 
 .cardbtn-delete {
     border-radius: 8px;
@@ -215,13 +228,13 @@ body {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #F1C376;
+  background-color: #C1CFA1;
   cursor: pointer;
   transition: border-color 0.25s;
 }
 
 .sSR-btn:hover{
-    border-color: #606C5D;
+    background-color: #606C5D;
 }
 
 
@@ -239,7 +252,6 @@ body {
     margin-bottom: 3em;
     color: #fff; 
     text-align: center;
-    /* background: #ff4da6; */
     opacity: 0.3;
     padding: 1em;
     font-size: 1.2em;
