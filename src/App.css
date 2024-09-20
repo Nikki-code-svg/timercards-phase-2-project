@@ -237,14 +237,16 @@ body {
     }
   }
   
-
+/* Timer count down style */
   .count-timer {
     margin-bottom: 3em;
     color: #fff; 
     text-align: center;
-    background: #ff4da6;
+    /* background: #ff4da6; */
     opacity: 0.3;
-    /* animation: glow 1s ease-in-out infinite alternate;  */
+    padding: 1em;
+    font-size: 1.2em;
+    background: radial-gradient(#ff4da6, #E7CCCC);
     
   }
   

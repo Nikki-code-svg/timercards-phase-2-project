@@ -1,4 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState, useRef } from "react";
+import audioFile from './audioFile/sweet-man-10954.mp3' 
+
 
 const CountdownTimer = ({ hours, minutes, seconds }) => {
   const [timeLeft, setTimeLeft] = useState({
@@ -7,6 +9,8 @@ const CountdownTimer = ({ hours, minutes, seconds }) => {
     seconds: seconds || 0,
   });
   const [isActive, setIsActive] = useState(false);
+  const audioRef = useRef(null);
+
 
   useEffect(() => {
     let interval;
@@ -16,7 +20,12 @@ const CountdownTimer = ({ hours, minutes, seconds }) => {
         setTimeLeft((prevTime) => {
           if (prevTime.hours === 0 && prevTime.minutes === 0 && prevTime.seconds === 0) {
             clearInterval(interval);
+            if (audioRef.current) {
+              audioRef.current.play();
+            }
+
             return prevTime;
+            
           }
 
           let updatedHours = prevTime.hours;
@@ -49,10 +58,13 @@ const CountdownTimer = ({ hours, minutes, seconds }) => {
 
   const handleStart = () => {
     setIsActive(true);
+  
   };
 
   const handleStop = () => {
     setIsActive(false);
+      audioRef.current.pause(); 
+      audioRef.current.currentTime = 0; 
   };
 
   const handleReset = () => {
@@ -62,6 +74,10 @@ const CountdownTimer = ({ hours, minutes, seconds }) => {
       minutes: minutes || 0,
       seconds: seconds || 0,
     });
+    if(audioRef.current){
+        audioRef.current.pause(); 
+        audioRef.current.currentTime = 0;
+    }
   };
 
   const { hours: remainingHours, minutes: remainingMinutes, seconds: remainingSeconds } = timeLeft;
@@ -75,6 +91,7 @@ const CountdownTimer = ({ hours, minutes, seconds }) => {
       <button  className="sSR-btn" onClick={handleStart}>Start</button>
       <button  className="sSR-btn" onClick={handleStop}>Stop</button>
       <button  className="sSR-btn" onClick={handleReset}>Reset</button>
+      <audio ref={audioRef} src={audioFile} preload="auto" />
     </div>
   );
 };
